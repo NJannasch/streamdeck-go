@@ -1,0 +1,60 @@
+name: Hardware compatibility report
+description: Report results from testing a supported model on physical hardware.
+title: "hardware: "
+labels:
+  - hardware
+body:
+  - type: input
+    id: device
+    attributes:
+      label: Stream Deck model and USB product ID
+      placeholder: Stream Deck XL, 0x006c
+    validations:
+      required: true
+
+  - type: input
+    id: firmware
+    attributes:
+      label: Firmware version
+      placeholder: 1.00.003
+    validations:
+      required: true
+
+  - type: input
+    id: environment
+    attributes:
+      label: Operating system, architecture, and Go version
+      placeholder: Linux 6.17, ARM64, Go 1.27.1
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: tested
+    attributes:
+      label: Capabilities tested
+      options:
+        - label: Discovery and exclusive open
+        - label: Serial number and firmware information
+        - label: Key press and release events
+        - label: Key images, colors, and orientation
+        - label: Brightness and reset
+        - label: Dial input
+        - label: Touch input and display
+        - label: Full LCD or status screen
+        - label: Sleep settings and unit information
+        - label: Stored backgrounds or encoder LEDs
+
+  - type: textarea
+    id: results
+    attributes:
+      label: Results
+      description: State what passed, what failed, and the exact commands or example programs used.
+    validations:
+      required: true
+
+  - type: textarea
+    id: output
+    attributes:
+      label: Relevant output
+      description: Remove serial numbers or other private data. This field is formatted as code.
+      render: shell

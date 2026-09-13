@@ -1,0 +1,70 @@
+name: Feature request
+description: Suggest a library API, device capability, or supported model.
+title: "feature: "
+labels:
+  - enhancement
+body:
+  - type: checkboxes
+    id: preparation
+    attributes:
+      label: Before submitting
+      options:
+        - label: I searched the existing issues and capability matrix for this request.
+          required: true
+
+  - type: textarea
+    id: use-case
+    attributes:
+      label: Use case
+      description: Explain the application behavior or hardware task this feature would enable.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: scope
+    attributes:
+      label: Scope
+      description: See CAPABILITIES.md for the boundary of this hardware library.
+      options:
+        - Direct hardware control
+        - Device or platform support
+        - Image or animation helper
+        - API or developer experience
+        - Higher-level application behavior
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behavior or API
+      description: Describe how callers would use the feature. A small Go example is helpful.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Describe current workarounds or other designs you considered.
+
+  - type: input
+    id: device
+    attributes:
+      label: Relevant Stream Deck model
+      description: Include the model and USB product ID when the request is device-specific.
+      placeholder: Stream Deck Plus, 0x0084
+
+  - type: textarea
+    id: protocol
+    attributes:
+      label: Protocol evidence
+      description: Link public documentation or describe verified HID reports when proposing a hardware command.
+
+  - type: checkboxes
+    id: contribution
+    attributes:
+      label: Contribution
+      options:
+        - label: I may be able to test this on physical hardware.
+        - label: I may be able to submit an implementation.

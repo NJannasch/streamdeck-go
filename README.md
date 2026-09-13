@@ -24,11 +24,7 @@ go get github.com/NJannasch/streamdeck-go
 The library requires Go 1.22 or newer.
 
 The API is currently pre-v1 and may change while additional physical models
-are validated. Confirm the final module path before the first public release.
-
-The project is available under the [MIT License](LICENSE). Third-party
-dependency attributions are listed in
-[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+are validated.
 
 See [USAGE.md](USAGE.md) for device selection, event handling, reconnects,
 capability checks, images, settings, and platform setup. The precise hardware
@@ -149,10 +145,9 @@ docker build -t streamdeck-go-check .
 The same check is available as `make verify`; `make check` runs tests, race
 detection, and vet on the host.
 
-Once the repository is hosted on GitHub, the CI workflow runs tests with Go
-1.22 and Go 1.27 and builds every package for Linux AMD64/ARM/ARM64, Windows
-AMD64/ARM64, and macOS AMD64/ARM64. It runs on pushes, pull requests, and manual
-dispatches.
+The GitHub Actions CI workflow runs tests with Go 1.22 and Go 1.27 and builds
+every package for Linux AMD64/ARM/ARM64, Windows AMD64/ARM64, and macOS
+AMD64/ARM64. It runs on pushes, pull requests, and manual dispatches.
 
 Docker verifies builds but does not access the USB device. Hardware tests should
 run on the host or in a container with the relevant `/dev/hidraw*` device passed
@@ -164,3 +159,17 @@ The Stream Deck MK.2 (`0fd9:0080`) has been discovered, opened, and queried on
 real Linux hardware. Other model protocols are implemented from Elgato's HID
 documentation and the Python library's device definitions and are covered by
 packet-level tests, but still need confirmation on their physical devices.
+
+## Contributing
+
+Use the structured templates for [bug reports](https://github.com/NJannasch/streamdeck-go/issues/new?template=bug_report.yml),
+[feature requests](https://github.com/NJannasch/streamdeck-go/issues/new?template=feature_request.yml),
+and [hardware compatibility reports](https://github.com/NJannasch/streamdeck-go/issues/new?template=hardware_report.yml).
+Development and protocol contribution guidance is in
+[CONTRIBUTING.md](CONTRIBUTING.md).
+
+## License
+
+`streamdeck-go` is available under the [MIT License](LICENSE). Third-party
+dependency attributions are listed in
+[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
